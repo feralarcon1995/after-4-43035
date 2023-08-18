@@ -1,0 +1,254 @@
+/* color:  */
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background-color: #040828;
+}
+
+img {
+  width: 200px;
+}
+
+/* header */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+.nav .nav__brand,
+.nav .nav-link {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+.nav-list .nav-btn {
+  background-color: #fff;
+  color: #ff6ad5;
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+.nav-list .nav-btn:hover {
+  background-color: transparent;
+  border: 1px solid #ff6ad5;
+  padding: 14px 20px;
+}
+
+/* footer */
+footer p {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: right;
+  padding: 30px;
+}
+
+/* main */
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "left left right right";
+  padding: 20px;
+  /* hero left */
+  /* hero right */
+}
+main .hero__left {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  width: 90%;
+}
+main .hero__left h1 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+main .hero__left p {
+  color: #fff;
+  font-size: 1.6rem;
+}
+main .hero__left a {
+  background-color: #fff;
+  color: #ff6ad5;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 250px;
+  max-width: 50%;
+}
+main .hero__left__users {
+  display: flex;
+  height: 120px;
+  align-items: center;
+  padding: 10px;
+  margin-left: 10px;
+}
+main .hero__left__users img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 2px solid #fff;
+  margin: -10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+main .hero__left__users img:hover {
+  margin: 0;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+}
+main .hero__right {
+  grid-area: right;
+  position: relative;
+}
+main .hero__right img {
+  width: 100%;
+  min-height: 800px;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+main .hero__right__title {
+  padding: 25px;
+  background-color: rgba(238, 238, 238, 0.7411764706);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+main .hero__right .c1 {
+  position: absolute;
+  bottom: 30%;
+  left: -20%;
+  transition: 0.3s;
+}
+main .hero__right .c1:hover {
+  background-color: #fff;
+  left: -10%;
+  font-size: 20px;
+}
+main .hero__right .c1:hover .bluebar {
+  width: 40%;
+}
+main .hero__right .c1:hover .graybar {
+  width: 100%;
+}
+main .hero__right .c2 {
+  position: absolute;
+  bottom: 5%;
+  left: -15%;
+  transition: 0.3s;
+}
+main .hero__right .c2:hover {
+  background-color: #fff;
+  left: -10%;
+  font-size: 20px;
+}
+main .hero__right .c2:hover .bluebar {
+  width: 40%;
+}
+main .hero__right .c2:hover .graybar {
+  width: 100%;
+}
+main .hero__right .bluebar {
+  background-color: #ff6ad5;
+  width: 30%;
+  height: 13px;
+  border-radius: 50px;
+  display: inline-block;
+  transition: 0.3s;
+}
+main .hero__right .graybar {
+  background-color: #717679;
+  width: 70%;
+  height: 13px;
+  border-radius: 50px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+/* mediaqueries */
+@media only screen and (max-width: 990px) {
+  .c1,
+  .c2 {
+    position: static;
+    margin: 10px 0;
+  }
+  .bluebar {
+    width: 20%;
+    height: 10px;
+  }
+  .graybar {
+    width: 50%;
+    height: 10px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  nav .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .c1,
+  .c2 {
+    text-align: center;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  main .hero__right img {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__left p {
+    text-align: justify;
+  }
+  .hero__left a {
+    width: 100%;
+    align-self: center;
+  }
+  .hero__left,
+  .hero__right {
+    width: 100%;
+  }
+  footer p {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

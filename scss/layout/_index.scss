@@ -1,0 +1,139 @@
+/* main */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "left left right right";
+    padding: 20px;
+
+    /* hero left */
+
+    .hero__left {
+        grid-area: left;
+        @include flex(column, center, 50px);
+        width: 90%;
+
+        h1 {
+            color: $light-color;
+            font-size: 2.5rem;
+        }
+
+        p {
+            color: $light-color;
+            font-size: 1.6rem;
+        }
+
+        a {
+            background-color: $light-color;
+            color: $main-color;
+            border-radius: 10px;
+            font-weight: bold;
+            padding: 10px 14px;
+            text-align: center;
+            min-width: 250px;
+            max-width: 50%;
+        }
+
+        &__users {
+            display: flex;
+            height: 120px;
+            align-items: center;
+            padding: 10px;
+            margin-left: 10px;
+
+            img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 100%;
+                border: 2px solid $light-color;
+                margin: -10px;
+                transition: 0.3s;
+                cursor: pointer;
+
+                &:hover {
+                    margin: 0;
+                    z-index: 1;
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+        }
+    }
+
+    /* hero right */
+    .hero__right {
+        grid-area: right;
+        position: relative;
+
+        img {
+            width: 100%;
+            min-height: 800px;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        &__title {
+            padding: 25px;
+            background-color: #eeeeeebd;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .c1 {
+            position: absolute;
+            bottom: 30%;
+            left: -20%;
+            transition: 0.3s;
+            &:hover {
+                background-color: $light-color;
+                left: -10%;
+                font-size: 20px;
+                .bluebar {
+                    width: 40%;
+                }
+                .graybar{
+                    width: 100%;
+                }
+            }
+        }
+        .c2 {
+            position: absolute;
+            bottom: 5%;
+            left: -15%;
+            transition: 0.3s;
+            &:hover {
+                background-color: $light-color;
+                left: -10%;
+                font-size: 20px;
+                .bluebar {
+                    width: 40%;
+                }
+                .graybar{
+                    width: 100%;
+                }
+            }
+        }
+
+        .bluebar {
+            background-color: $main-color;
+            width: 30%;
+            height: 13px;
+            border-radius: 50px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .graybar {
+            background-color: #717679;
+            width: 70%;
+            height: 13px;
+            border-radius: 50px;
+            display: inline-block;
+            transition: 0.3s;
+
+        }
+    }
+}
